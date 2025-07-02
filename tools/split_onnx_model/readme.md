@@ -17,8 +17,8 @@
 
 
 ### 使用方式
-- 拆分功能
-    参数如下
+- 拆分功能 <br>
+    参数如下 <br>
       args.func_selection = '0' <br>
       args.modelName = "yolov8semi3d_backbone_int8_label4_20250624" <br>
       args.modelPath = r"D:\NextVPU_Self\WorkList\HYG\limin_yolov8semi3d\four_classes"<br>
@@ -33,8 +33,8 @@
       拆分后结果如下所示：<br>
     ![1751421084621](assets/1751421084621.png)
 
-- 合并功能
-    参数如下：
+- 合并功能 <br>
+    参数如下： <br>
       args.func_selection = '1'<br>
       args.oriModel = r"D:\NextVPU_Self\PPQ\models\front_rear_sense2d\20250606\yolov8n-2dod-nc4-20250605173848_backbone_mAP0_545_int8_backbone_mAP0_526.onnx"<br>
       args.postModel = r"D:\NextVPU_Self\WorkList\WH\four_model_test\Yolov8\Yolov8.onnx"<br>
