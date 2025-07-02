@@ -19,29 +19,29 @@
 ### 使用方式
 - 拆分功能
     参数如下
-      args.func_selection = '0'  
-      args.modelName = "yolov8semi3d_backbone_int8_label4_20250624"  
-      args.modelPath = r"D:\NextVPU_Self\WorkList\HYG\limin_yolov8semi3d\four_classes"   
-       args.modelOutPath = r"D:\NextVPU_Self\WorkList\HYG\limin_yolov8semi3d\four_classes"  
-      args.modelInputName = ["images"]  
-      args.bottomName = ["PPQ_Operation_0"]  
-       args.topName = ["/model.22/cv4.0/cv4.0.2/Conv","/model.22/cv4.1/cv4.1.2/Conv","/model.22/cv4.2/cv4.2.2/Conv","/model.22/cv2.0/cv2.0.2/Conv","/model.22/cv3.0/cv3.0.2/Conv","/model.22/cv2.1/cv2.1.2/Conv","/model.22/cv3.1/cv3.1.2/Conv","/model.22/cv2.2/cv2.2.2/Conv","/model.22/cv3.2/cv3.2.2/Conv"]  
-      args.outputTypes = [np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32]  
-      拆分前模型如下所示：  
+      args.func_selection = '0' <br>
+      args.modelName = "yolov8semi3d_backbone_int8_label4_20250624" <br>
+      args.modelPath = r"D:\NextVPU_Self\WorkList\HYG\limin_yolov8semi3d\four_classes"<br>
+      args.modelOutPath = r"D:\NextVPU_Self\WorkList\HYG\limin_yolov8semi3d\four_classes"<br>
+      args.modelInputName = ["images"]<br>
+      args.bottomName = ["PPQ_Operation_0"]<br>
+      args.topName = ["/model.22/cv4.0/cv4.0.2/Conv","/model.22/cv4.1/cv4.1.2/Conv","/model.22/cv4.2/cv4.2.2/Conv","/model.22/cv2.0/cv2.0.2/Conv","/model.22/cv3.0/cv3.0.2/Conv","/model.22/cv2.1/cv2.1.2/Conv","/model.22/cv3.1/cv3.1.2/Conv","/model.22/cv2.2/cv2.2.2/Conv","/model.22/cv3.2/cv3.2.2/Conv"]<br>
+      args.outputTypes = [np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32,np.float32]<br>
+      拆分前模型如下所示：<br>
     ![1751421175630](assets/1751421175630.png)
     ![1751420902256](assets/1751420902256.png)
-      拆分后结果如下所示：  
+      拆分后结果如下所示：<br>
     ![1751421084621](assets/1751421084621.png)
 
 - 合并功能
     参数如下：
-      args.func_selection = '1'  
-      args.oriModel = r"D:\NextVPU_Self\PPQ\models\front_rear_sense2d\20250606\yolov8n-2dod-nc4-20250605173848_backbone_mAP0_545_int8_backbone_mAP0_526.onnx"  
-      args.postModel = r"D:\NextVPU_Self\WorkList\WH\four_model_test\Yolov8\Yolov8.onnx"  
-       args.savePath = r"D:\NextVPU_Self\WorkList\WH\four_model_test\yolov8Backbone_yolov8Decode\yolov8Backbone_yolov8Decode.onnx"  
-      args.bottomName = ["/model.22/cv2.0/cv2.0.2/Conv_output_0","/model.22/cv2.2/cv2.2.2/Conv_output_0","/model.22/cv3.0/cv3.0.2/Conv_output_0","/model.22/cv3.1/cv3.1.2/Conv_output_0","/model.22/cv3.2/cv3.2.2/Conv_output_0"]  
-       args.topName = ["Yolov8_input0","Yolov8_input3","Yolov8_input1","Yolov8_input4","Yolov8_input2","Yolov8_input5"]  
-      原始模型输出节点:  
+      args.func_selection = '1'<br>
+      args.oriModel = r"D:\NextVPU_Self\PPQ\models\front_rear_sense2d\20250606\yolov8n-2dod-nc4-20250605173848_backbone_mAP0_545_int8_backbone_mAP0_526.onnx"<br>
+      args.postModel = r"D:\NextVPU_Self\WorkList\WH\four_model_test\Yolov8\Yolov8.onnx"<br>
+       args.savePath = r"D:\NextVPU_Self\WorkList\WH\four_model_test\yolov8Backbone_yolov8Decode\yolov8Backbone_yolov8Decode.onnx"<br>
+      args.bottomName = ["/model.22/cv2.0/cv2.0.2/Conv_output_0","/model.22/cv2.2/cv2.2.2/Conv_output_0","/model.22/cv3.0/cv3.0.2/Conv_output_0","/model.22/cv3.1/cv3.1.2/Conv_output_0","/model.22/cv3.2/cv3.2.2/Conv_output_0"]<br>
+       args.topName = ["Yolov8_input0","Yolov8_input3","Yolov8_input1","Yolov8_input4","Yolov8_input2","Yolov8_input5"]<br>
+      原始模型输出节点:<br>
     ![1751421355276](assets/1751421355276.png)
-      需要合并模型的输入节点：  
+      需要合并模型的输入节点：<br>
     ![1751421388721](assets/1751421388721.png)
